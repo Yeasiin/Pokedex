@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledCard } from "./../styled/StyledCard";
+import { PokemonName } from "./../styled/PokemonName";
 
 export default function Card({ pokemon }) {
   const gettingImage = pokemon.url.split("/");
@@ -8,12 +9,16 @@ export default function Card({ pokemon }) {
     <StyledCard>
       <img
         // src={`https://pokeres.bastionbot.org/images/pokemon/${image}.png`}
-        src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${image.padStart(3,"0")}.png`}
+        src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${image.padStart(
+          3,
+          "0"
+        )}.png`}
         height="180"
         weight="180"
         alt={pokemon.name}
       />
-      <p>{pokemon.name}</p>
+      <span></span>
+      <PokemonName>{pokemon.name}</PokemonName>
     </StyledCard>
   );
 }

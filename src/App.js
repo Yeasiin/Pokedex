@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=250&offset=10")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=100&offset=100")
       .then((response) => response.json())
       .then(({ results }) => this.setState({ pokemons: results }));
   }
@@ -24,7 +24,7 @@ class App extends Component {
     );
     return (
       <Container>
-        <Title>Pokemon Rolodex</Title>
+        <Title>Pokédex</Title>
         <Search
           placeholder="Search Pokemon"
           handleChange={(e) => this.setState({ searchField: e.target.value })}
